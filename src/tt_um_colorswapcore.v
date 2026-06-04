@@ -33,15 +33,12 @@
 
 `default_nettype none
 
-module tt_um_example (
-    input  wire       VGND,
-    input  wire       VPWR,
+module tt_um_colorswapcore (
     input  wire [7:0] ui_in,    // Entradas dedicadas
     output wire [7:0] uo_out,   // Salidas dedicadas
     input  wire [7:0] uio_in,   // Pines bidir — entrada
     output wire [7:0] uio_out,  // Pines bidir — salida
     output wire [7:0] uio_oe,   // Pines bidir — dirección (1=salida)
-    inout  wire [7:0] ua,
     input  wire       ena,      // Habilitador del chip
     input  wire       clk,      // Reloj del sistema
     input  wire       rst_n     // Reset activo en bajo
