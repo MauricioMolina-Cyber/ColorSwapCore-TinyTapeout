@@ -1,9 +1,23 @@
 {
     "DESIGN_NAME": "tt_um_colorswapcore",
-    "VERILOG_FILES": "dir::src/*.v",
+    "VERILOG_FILES": "dir::project.v dir::color_processor.v dir::spi_slave.v dir::vga_controller.v",
     "CLOCK_PORT": "clk",
-    "CLOCK_PERIOD": 20,
-    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "CLOCK_NET": "clk",
+    "CLOCK_PERIOD": 50,
     "FP_SIZING": "absolute",
-    "DIE_AREA": [0, 0, 200, 200]
+    "DIE_AREA": "0 0 161.00 111.52",
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "MAX_FANOUT_CONSTRAINT": 16,
+    "PL_TARGET_DENSITY": 0.45,
+    "PL_RESIZER_DESIGN_OPTIMIZATIONS": 0,
+    "PL_RESIZER_TIMING_OPTIMIZATIONS": 0,
+    "GLB_RESIZER_DESIGN_OPTIMIZATIONS": 0,
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": 0,
+    "VDD_NETS": ["VPWR"],
+    "GND_NETS": ["VGND"],
+    "DIODE_INSERTION_STRATEGY": 4,
+    "RUN_CVC": 0,
+    "MAGIC_DEF_LABELS": 0,
+    "QUIT_ON_TIMING_VIOLATIONS": 0
 }
