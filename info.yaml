@@ -1,12 +1,11 @@
-# Tiny Tapeout project information
 project:
-  title:        "ColorSwapCore — RGB Color Processor with VGA Output"
-  author:       "Mauricio Molina Umana"
-  description:  "Real-time RGB color transformation processor with SPI control and VGA output. Six selectable modes: original, grayscale, selective color, retro palette, negative, and thermal effect."
-  language:     "Verilog"
-  clock_hz:     25000000
+  title:      "ColorSwapCore — RGB Color Processor with VGA Output"
+  author:     "Mauricio Molina Umana"
+  description: "Real-time RGB color transformation processor with SPI control and VGA output."
+  language:    "Verilog"
+  clock_hz:    25000000
   tiles: "1x1"
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_colorswapcore"
   source_files:
     - "project.v"
     - "spi_slave.v"
@@ -14,34 +13,16 @@ project:
     - "vga_controller.v"
 
 pinout:
-  # Inputs
-  ui[0]: "SPI_CLK - SPI clock from ESP32"
-  ui[1]: "SPI_MOSI - SPI data from ESP32"
-  ui[2]: "SPI_CS - Chip select active low"
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
-  # Outputs
-  uo[0]: "VGA_HSYNC - Horizontal sync"
-  uo[1]: "VGA_VSYNC - Vertical sync"
-  uo[2]: "VGA_R - Red channel 1-bit"
-  uo[3]: "VGA_G - Green channel 1-bit"
-  uo[4]: "VGA_B - Blue channel 1-bit"
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
-  # Bidirectional pins
-  uio[0]: "R_IN - Red pixel input"
-  uio[1]: "G_IN - Green pixel input"
-  uio[2]: "B_IN - Blue pixel input"
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
-  ua[0]: ""
-  ua[1]: ""
+  ui[0]: "SPI_CLK"
+  ui[1]: "SPI_MOSI"
+  ui[2]: "SPI_CS"
+  uo[0]: "VGA_HSYNC"
+  uo[1]: "VGA_VSYNC"
+  uo[2]: "VGA_R"
+  uo[3]: "VGA_G"
+  uo[4]: "VGA_B"
+  uio[0]: "R_IN"
+  uio[1]: "G_IN"
+  uio[2]: "B_IN"
 
 yaml_version: 6
