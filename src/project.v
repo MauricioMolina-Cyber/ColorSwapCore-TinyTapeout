@@ -1,39 +1,11 @@
 /*
  * ColorSwapCore — Procesador de color RGB vía SPI con salida VGA
  * TinyTapeout Top-Level Module
- *
- * Pinout TinyTapeout (8 in / 8 out / 8 bidir):
- *
- * ENTRADAS  (ui_in[7:0]):
- *   ui_in[0] = SPI_CLK   (reloj SPI desde ESP32)
- *   ui_in[1] = SPI_MOSI  (datos SPI desde ESP32)
- *   ui_in[2] = SPI_CS    (chip select SPI, activo en bajo)
- *   ui_in[7:3] = reservado / futuro uso
- *
- * SALIDAS (uo_out[7:0]):
- *   uo_out[0] = VGA_HSYNC
- *   uo_out[1] = VGA_VSYNC
- *   uo_out[2] = VGA_R    (1 bit rojo)
- *   uo_out[3] = VGA_G    (1 bit verde)
- *   uo_out[4] = VGA_B    (1 bit azul)
- *   uo_out[7:5] = reservado
- *
- * BIDIRECCIONALES (uio[7:0]):
- *   uio[2:0] = RGB entrada (R, G, B — 1 bit cada uno, modo demo)
- *   uio[7:3] = reservado
- *
- * MODOS DE COLOR (seleccionados por SPI):
- *   3'b000 = Modo 0: Color original
- *   3'b001 = Modo 1: Escala de grises
- *   3'b010 = Modo 2: Detección de color + gris selectivo
- *   3'b011 = Modo 3: Paleta reducida (retro)
- *   3'b100 = Modo 4: Negativo
- *   3'b101 = Modo 5: Efecto térmico
  */
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_colorswapcore (
     input  wire       VGND,
     input  wire       VPWR,
     input  wire [7:0] ui_in,    // Entradas dedicadas
@@ -68,7 +40,7 @@ module tt_um_example (
     assign uio_out = 8'b00000000;
 
     // -------------------------------------------------------
-    // Instancia: Receptor SPI (lee el modo desde ESP32)
+    // Instancia: Receptor SPI
     // -------------------------------------------------------
     spi_slave u_spi (
         .clk      (clk),
@@ -80,7 +52,7 @@ module tt_um_example (
     );
 
     // -------------------------------------------------------
-    // Instancia: Procesador de color (aplica el efecto)
+    // Instancia: Procesador de color
     // -------------------------------------------------------
     color_processor u_proc (
         .clk       (clk),
