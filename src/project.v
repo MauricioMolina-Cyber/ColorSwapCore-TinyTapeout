@@ -11,6 +11,7 @@ module tt_um_colorswapcore (
     input  wire [7:0] uio_in,   // Pines bidir — entrada
     output wire [7:0] uio_out,  // Pines bidir — salida
     output wire [7:0] uio_oe,   // Pines bidir — dirección (1=salida)
+    inout  wire [7:0] ua,       // Analógicos (requerido por TT, no usado aquí)
     input  wire       ena,      // Habilitador del chip
     input  wire       clk,      // Reloj del sistema
     input  wire       rst_n     // Reset activo en bajo
