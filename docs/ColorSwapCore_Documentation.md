@@ -186,6 +186,5 @@ ESP32 wiring:
     Initial design, 6 color modes, SPI receiver, VGA controller.
     Submitted to Tiny Tapeout (SKY130 PDK).
 
-================================================================================
                          END OF DOCUMENTATION
-================================================================================
+
